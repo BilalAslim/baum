@@ -14,7 +14,7 @@ The more information you provide, the easier it is to validate that there is a b
 
 ## Requesting a Feature
 
-1. Search [Issues](https://github.com/TopOnePercent/baum/issues) for similar feature requests. It's possible somebody has already asked for this feature or provided a pull request that's still in discussion.
+1. Search [Issues](https://github.com/BilalAslim/baum/issues) for similar feature requests. It's possible somebody has already asked for this feature or provided a pull request that's still in discussion.
 2. Provide a clear and detailed explanation of the feature you want and why it's important to add.
 3. If the feature is complex, consider writing some initial documentation for it. This will help everyone understand its use cases and if it is finally implemented it will serve as the base for its documentation.
 4. Attempt a Pull Request. If you're at all able, start writing some code. Please understand that this is an open source side-project, so the time devoted to it is limited. If you can write some code then that will speed the process greatly.
@@ -29,3 +29,19 @@ The more information you provide, the easier it is to validate that there is a b
 6. Push to your fork and submit a pull request. Please provide some explanation as to why you made the changes you made. For new features make sure to explain a standard use case.
 
 At this point you're waiting on us to respond. Please, be patient. We may suggest some changes or improvements or even complete alternative implementations.
+
+# Contributors
+
+The following individuals and organizations have contributed greatly to this project:
+
+- **[Estanislau Trepat](http://etrepat.com)**  
+  - 📧 Email: estanis@etrepat.com  
+
+- **[Gary Pearman](http://red-robot.co.uk)**  
+  - 📧 Email: gaz@red-robot.co.uk  
+
+- **[Brian LaVallee](https://invite-comm.jp)**  
+  - 📧 Email: brian.lavallee@invite-comm.jp  
+
+- **[Top One Percent LTD](https://theforesight.co.uk)**  
+  - 📧 Email: bilal@theforesight.co.uk  

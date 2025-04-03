@@ -2,7 +2,7 @@
 
 Supported Laravel Versions:
 
-[![Laravel 5.8](https://img.shields.io/badge/Laravel-5.8-informational)](https://github.com/TopOnePercent/baum) [![Laravel 6](https://img.shields.io/badge/Laravel-6-informational)](https://github.com/TopOnePercent/baum) [![Laravel 7](https://img.shields.io/badge/Laravel-7-informational)](https://github.com/TopOnePercent/baum) [![Laravel 8](https://img.shields.io/badge/Laravel-8-informational)](https://github.com/TopOnePercent/baum) [![Laravel 9](https://img.shields.io/badge/Laravel-9-informational)](https://github.com/TopOnePercent/baum) [![Laravel 10](https://img.shields.io/badge/Laravel-10-informational)](https://github.com/TopOnePercent/baum) [![Laravel 11](https://img.shields.io/badge/Laravel-11-informational)](https://github.com/TopOnePercent/baum) [![Laravel 12](https://img.shields.io/badge/Laravel-12-informational)](https://github.com/TopOnePercent/baum)
+[![Laravel 5.8](https://img.shields.io/badge/Laravel-5.8-informational)](https://github.com/BilalAslim/baum) [![Laravel 6](https://img.shields.io/badge/Laravel-6-informational)](https://github.com/BilalAslim/baum) [![Laravel 7](https://img.shields.io/badge/Laravel-7-informational)](https://github.com/BilalAslim/baum) [![Laravel 8](https://img.shields.io/badge/Laravel-8-informational)](https://github.com/BilalAslim/baum) [![Laravel 9](https://img.shields.io/badge/Laravel-9-informational)](https://github.com/BilalAslim/baum) [![Laravel 10](https://img.shields.io/badge/Laravel-10-informational)](https://github.com/BilalAslim/baum) [![Laravel 11](https://img.shields.io/badge/Laravel-11-informational)](https://github.com/BilalAslim/baum) [![Laravel 12](https://img.shields.io/badge/Laravel-12-informational)](https://github.com/BilalAslim/baum)
 
 Package Info:
 
@@ -10,8 +10,8 @@ Package Info:
 
 Build/Code Coverage:
 
-[![Tests](https://github.com/TopOnePercent/baum/actions/workflows/run_tests.yml/badge.svg?branch=master)](https://github.com/TopOnePercent/baum/actions/workflows/run_tests.yml)
-[![Coverage Status](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/TopOnePercent/baum)
+[![Tests](https://github.com/BilalAslim/baum/actions/workflows/run_tests.yml/badge.svg?branch=master)](https://github.com/BilalAslim/baum/actions/workflows/run_tests.yml)
+[![Coverage Status](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/BilalAslim/baum)
 
 ## Nested Set implementation for Laravel
 
@@ -803,7 +803,7 @@ $nestedList = Category::getNestedList('name');
 
 Thinking of contributing? Maybe you've found some nasty bug or want to add a new feature? That's great news!
 
-Please see the [CONTRIBUTING.md](https://github.com/TopOnePercent/baum/blob/master/CONTRIBUTING.md) file for extended guidelines and/or recommendations.
+Please see the [CONTRIBUTING.md](https://github.com/BilalAslim/baum/blob/master/CONTRIBUTING.md) file for extended guidelines and/or recommendations.
 
 ## License
 

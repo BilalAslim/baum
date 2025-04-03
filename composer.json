@@ -6,25 +6,10 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Estanislau Trepat",
-            "email": "estanis@etrepat.com",
-            "homepage": "http://etrepat.com"
+            "name": "Bilal Aslim",
+            "email": "bilalaslim@gmail.com",
+            "homepage": "https://github.com/BilalAslim"
         },
-        {
-            "name": "Gary Pearman",
-            "email": "gaz@red-robot.co.uk",
-            "homepage": "http://red-robot.co.uk"
-        },
-        {
-            "name": "Brian LaVallee",
-            "email": "brian.lavallee@invite-comm.jp",
-            "homepage": "https://invite-comm.jp"
-        },
-        {
-            "name": "Top One Percent LTD",
-            "email": "developers@theforesight.co.uk",
-            "homepage": "https://theforesight.co.uk"
-        }
     ],
     "prefer-stable": true,
     "require": {
