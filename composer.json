@@ -9,7 +9,7 @@
             "name": "Bilal Aslim",
             "email": "bilalaslim@gmail.com",
             "homepage": "https://github.com/BilalAslim"
-        },
+        }
     ],
     "prefer-stable": true,
     "require": {
