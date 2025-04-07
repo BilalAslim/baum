@@ -6,8 +6,7 @@ use Baum\Tests\Baseline\Models\BaseLineAlpha;
 
 class EloquentTest extends UnitAbstract
 {
-    /** @test */
-    public function recordCountTest()
+    public function testRecordCount()
     {
         factory(BaseLineAlpha::class, 50)->create();
         $this->assertEquals(BaseLineAlpha::count(), 50);
