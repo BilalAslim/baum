@@ -6,22 +6,19 @@ use Baum\Tests\Basic\Models\BasicBaum;
 
 class BasicBaumTest extends UnitAbstract
 {
-    /** @test */
-    public function noRecordsTest()
+    public function testNoRecords()
     {
         //factory(BasicBaum::class, 50)->create();
         $this->assertEquals(BasicBaum::count(), 0);
     }
 
-    /** @test */
-    public function rootTest()
+    public function testRoot()
     {
         $root = BasicBaum::create(['name' => 'Root category']);
         $this->assertEquals(BasicBaum::count(), 1);
     }
 
-    /** @test */
-    public function isChildTest()
+    public function testIsChild()
     {
         $parent = factory(BasicBaum::class)->create();
 
@@ -32,14 +29,12 @@ class BasicBaumTest extends UnitAbstract
         $this->assertFalse($parent->isChild());
     }
 
-    /** @test */
-    public function getQualifiedDepthColumnNameTest()
+    public function testGetQualifiedDepthColumnName()
     {
         $this->assertTrue(factory(BasicBaum::class)->create()->getQualifiedDepthColumnName() == 'basic_baums.depth');
     }
 
-    /** @test */
-    public function parentChildTest()
+    public function testParentChild()
     {
         $parent = factory(BasicBaum::class)->create();
 
@@ -66,16 +61,14 @@ class BasicBaumTest extends UnitAbstract
         // print_r(BasicBaum::getNestedList('name'));
     }
 
-    /** @test */
-    public function rootCountTest()
+    public function testRootCount()
     {
         $rand = rand(2, 5);
         factory(BasicBaum::class, $rand)->states('root')->create();
         $this->assertEquals($rand, BasicBaum::roots()->count());
     }
 
-    /** @test */
-    public function getRootTest()
+    public function testGetRoot()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -96,8 +89,7 @@ class BasicBaumTest extends UnitAbstract
 //          $this->assertEquals($rand, BasicBaum::roots()->count());
     }
 
-    /** @test */
-    public function getAncestorsAndSelfTest()
+    public function testGetAncestorsAndSelf()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -114,8 +106,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(6, $child5->getAncestorsAndSelf()->count());
     }
 
-    /** @test */
-    public function getAncestorsAndSelfWithoutRootTest()
+    public function testGetAncestorsAndSelfWithoutRoot()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -132,8 +123,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(5, $child5->getAncestorsAndSelfWithoutRoot()->count());
     }
 
-    /** @test */
-    public function getAncestorsTest()
+    public function testGetAncestors()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -150,8 +140,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(5, $child5->getAncestors()->count());
     }
 
-    /** @test */
-    public function getAncestorsWithoutRootTest()
+    public function testGetAncestorsWithoutRoot()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -168,8 +157,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(4, $child5->getAncestorsWithoutRoot()->count());
     }
 
-    /** @test */
-    public function getSiblingsAndSelfTest()
+    public function testGetSiblingsAndSelf()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -186,8 +174,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(1, $child5->getSiblingsAndSelf()->count());
     }
 
-    /** @test */
-    public function getSiblingsTest()
+    public function testGetSiblings()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -204,8 +191,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(0, $child5->getSiblings()->count());
     }
 
-    /** @test */
-    public function getLeavesTest()
+    public function testGetLeaves()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -219,8 +205,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(5, $data->getLeaves()->count());
     }
 
-    /** @test */
-    public function getDescendantsAndSelfTest()
+    public function testGetDescendantsAndSelf()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -234,8 +219,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(6, $data->getDescendantsAndSelf()->count());
     }
 
-    /** @test */
-    public function getDescendantsTest()
+    public function testGetDescendants()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -249,8 +233,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(5, $data->getDescendants()->count());
     }
 
-    /** @test */
-    public function getImmediateDescendantsTest()
+    public function testGetImmediateDescendants()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -264,8 +247,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(3, $data->getImmediateDescendants()->count());
     }
 
-    /** @test */
-    public function immediateDescendantsTest()
+    public function testImmediateDescendants()
     {
         $root = factory(BasicBaum::class)->create();
         $child1 = $root->children()->create(factory(BasicBaum::class)->raw());
@@ -278,8 +260,7 @@ class BasicBaumTest extends UnitAbstract
         $this->assertEquals(0, $root->immediateDescendants()->where('parent_id', '!=', $root->id)->count());
     }
 
-    /** @test */
-    public function makeBaumTest()
+    public function testMakeBaum()
     {
         $faker = \Faker\Factory::create();
         $model = $faker->domainWord . rand(1, 9999);
