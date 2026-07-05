@@ -708,19 +708,19 @@ class ClusterHierarchyTest extends UnitAbstract
 
         // Perform assertions
         $wholeTree = Cluster::hmap(Cluster::all()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedWholeTree, $wholeTree);
+        $this->assertArraysMatch($expectedWholeTree, $wholeTree);
 
         $subtreeA = Cluster::hmap(Cluster::clusters('A')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeA, $subtreeA);
+        $this->assertArraysMatch($expectedSubtreeA, $subtreeA);
 
         $subtreeB = Cluster::hmap(Cluster::clusters('B')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeB, $subtreeB);
+        $this->assertArraysMatch($expectedSubtreeB, $subtreeB);
 
         $subtreeC = Cluster::hmap(Cluster::clusters('C')->getDescendants()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeC, $subtreeC);
+        $this->assertArraysMatch($expectedSubtreeC, $subtreeC);
 
         $subtreeD = Cluster::hmap(Cluster::clusters('D')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeD, $subtreeD);
+        $this->assertArraysMatch($expectedSubtreeD, $subtreeD);
 
         $this->assertTrue(Cluster::clusters('D')->getDescendants()->toHierarchy()->isEmpty());
     }
@@ -743,7 +743,7 @@ class ClusterHierarchyTest extends UnitAbstract
         ];
 
         $parent->reload();
-        $this->assertArraysAreEqual($expected, Cluster::hmap($parent->getDescendantsAndSelf()->toHierarchy()->toArray()));
+        $this->assertArraysMatch($expected, Cluster::hmap($parent->getDescendantsAndSelf()->toHierarchy()->toArray()));
     }
 
     public function testGetNestedList()
@@ -760,7 +760,7 @@ class ClusterHierarchyTest extends UnitAbstract
             Cluster::clusters('Root 2')->id => str_repeat($seperator, 0) . 'Root 2',
         ];
 
-        $this->assertArraysAreEqual($expected, $nestedList);
+        $this->assertArraysMatch($expected, $nestedList);
     }
 
     public function testGetNestedListSymbol()
@@ -778,6 +778,6 @@ class ClusterHierarchyTest extends UnitAbstract
             Cluster::clusters('Root 2')->id => str_repeat($seperator, 0) . $symbol . 'Root 2',
         ];
 
-        $this->assertArraysAreEqual($expected, $nestedList);
+        $this->assertArraysMatch($expected, $nestedList);
     }
 }

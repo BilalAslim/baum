@@ -43,7 +43,7 @@ trait MyTrait
         return $output;
     }
 
-    public function assertArraysAreEqual($expected, $actual, $message = '')
+    public function assertArraysMatch($expected, $actual, $message = '')
     {
         $ex = json_encode($expected, JSON_PRETTY_PRINT);
         $ac = json_encode($actual, JSON_PRETTY_PRINT);

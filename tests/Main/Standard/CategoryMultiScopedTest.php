@@ -237,8 +237,8 @@ class CategoryMultiScopedTest extends UnitAbstract
     //             ],
     //         ];
 
-    //         $this->assertArraysAreEqual($expectedWhole1, $this->hmap(OrderedScopedCategory::where('company_id', 1)->get()->toHierarchy()->toArray()));
-    //         $this->assertArraysAreEqual($expectedWhole2, $this->hmap(OrderedScopedCategory::where('company_id', 2)->get()->toHierarchy()->toArray()));
+    //         $this->assertArraysMatch($expectedWhole1, $this->hmap(OrderedScopedCategory::where('company_id', 1)->get()->toHierarchy()->toArray()));
+    //         $this->assertArraysMatch($expectedWhole2, $this->hmap(OrderedScopedCategory::where('company_id', 2)->get()->toHierarchy()->toArray()));
 
     //      $parent = $this->categories('Root 1', OrderedScopedCategory::class);
 

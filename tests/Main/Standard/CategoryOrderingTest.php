@@ -48,7 +48,7 @@ class CategoryOrderingTest extends CategoryAbstract
             ],
         ];
 
-        $this->assertArraysAreEqual(
+        $this->assertArraysMatch(
             $expectedWhole,
             OrderedCategory::hmap(OrderedCategory::all()->toHierarchy()->toArray())
         );
@@ -63,7 +63,7 @@ class CategoryOrderingTest extends CategoryAbstract
             ],
         ];
 
-        $this->assertArraysAreEqual(
+        $this->assertArraysMatch(
             $expectedSubtreeZ,
             OrderedCategory::hmap(OrderedCategory::categories('Root Z')
                 ->getDescendantsAndSelf()

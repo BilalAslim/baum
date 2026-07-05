@@ -38,7 +38,7 @@ class OrderedClusterHeirarchyTestCase extends UnitAbstract
 
         $current = OrderedCluster::all()->toHierarchy()->toArray();
 
-        $this->assertArraysAreEqual($expectedWhole, hmap(OrderedCluster::all()->toHierarchy()->toArray()));
+        $this->assertArraysMatch($expectedWhole, hmap(OrderedCluster::all()->toHierarchy()->toArray()));
 
         $expectedSubtreeZ = [
             'Root Z' => [
@@ -48,6 +48,6 @@ class OrderedClusterHeirarchyTestCase extends UnitAbstract
             ],
         ];
 
-        $this->assertArraysAreEqual($expectedSubtreeZ, hmap($this->clusters('Root Z', 'OrderedCluster')->getDescendantsAndSelf()->toHierarchy()->toArray()));
+        $this->assertArraysMatch($expectedSubtreeZ, hmap($this->clusters('Root Z', 'OrderedCluster')->getDescendantsAndSelf()->toHierarchy()->toArray()));
     }
 }

@@ -18,16 +18,26 @@ jobs:
       COMPOSER_NO_INTERACTION: 1
 
     strategy:
+      fail-fast: false
       matrix:
-        php: [8.4, 8.3, 8.2, 8.1, 8.0, 7.4, 7.3]
+        include:
+          # Laravel 13 (requires PHP 8.3+)
+          - { php: '8.5', laravel: '13.*', testbench: '11.*' }
+          - { php: '8.4', laravel: '13.*', testbench: '11.*' }
+          - { php: '8.3', laravel: '13.*', testbench: '11.*' }
+          # Laravel 12 (requires PHP 8.2+)
+          - { php: '8.5', laravel: '12.*', testbench: '10.*' }
+          - { php: '8.4', laravel: '12.*', testbench: '10.*' }
+          - { php: '8.3', laravel: '12.*', testbench: '10.*' }
+          - { php: '8.2', laravel: '12.*', testbench: '10.*' }
 
-    name: P${{ matrix.php }}
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Validate composer.json and composer.lock
+    - name: Validate composer.json
       run: composer validate --strict
 
     - name: Setup PHP
@@ -39,11 +49,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        composer install -o --quiet
+        composer require --dev "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+        composer update --prefer-dist --no-interaction
 
     - name: Ensure coding standards are met
       run: composer coding_standard
 
     - name: Execute Tests
       run: composer tests
-      
