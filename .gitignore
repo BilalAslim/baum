@@ -1,6 +1,5 @@
 /vendor
 /build
-composer.lock
 *.cache
 .DS_Store
 /.idea
