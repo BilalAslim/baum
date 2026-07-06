@@ -1520,6 +1520,13 @@ trait NestedSet
      */
     public static function softDeletesEnabled()
     {
-        return with(new static())->areSoftDeletesEnabled();
+        // Determine soft-delete support from the trait list rather than
+        // instantiating the model. Instantiating here (via `new static()`)
+        // is not allowed while the model is still booting (Laravel 13+),
+        // as this method is called from bootNestedSet().
+        return in_array(
+            'Illuminate\Database\Eloquent\SoftDeletes',
+            class_uses_recursive(static::class)
+        );
     }
 }

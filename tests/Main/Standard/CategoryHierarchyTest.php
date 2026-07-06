@@ -956,19 +956,19 @@ class CategoryHierarchyTest extends UnitAbstract
 
         // Perform assertions
         $wholeTree = $this->hierarchy(Category::all()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedWholeTree, $wholeTree);
+        $this->assertArraysMatch($expectedWholeTree, $wholeTree);
 
         $subtreeA = $this->hierarchy($this->categories('A')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeA, $subtreeA);
+        $this->assertArraysMatch($expectedSubtreeA, $subtreeA);
 
         $subtreeB = $this->hierarchy($this->categories('B')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeB, $subtreeB);
+        $this->assertArraysMatch($expectedSubtreeB, $subtreeB);
 
         $subtreeC = $this->hierarchy($this->categories('C')->getDescendants()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeC, $subtreeC);
+        $this->assertArraysMatch($expectedSubtreeC, $subtreeC);
 
         $subtreeD = $this->hierarchy($this->categories('D')->getDescendantsAndSelf()->toHierarchy()->toArray());
-        $this->assertArraysAreEqual($expectedSubtreeD, $subtreeD);
+        $this->assertArraysMatch($expectedSubtreeD, $subtreeD);
 
         $this->assertTrue($this->categories('D')->getDescendants()->toHierarchy()->isEmpty());
     }
@@ -991,7 +991,7 @@ class CategoryHierarchyTest extends UnitAbstract
         ];
 
         $root->reload();
-        $this->assertArraysAreEqual(
+        $this->assertArraysMatch(
             $expected,
             $this->hierarchy(
                 $this->categories('C1')->getDescendantsAndSelf()->toHierarchy()->toArray()
@@ -1018,7 +1018,7 @@ class CategoryHierarchyTest extends UnitAbstract
             6 => str_repeat($seperator, 1) . 'B3',
         ];
 
-        $this->assertArraysAreEqual($expected, $nestedList);
+        $this->assertArraysMatch($expected, $nestedList);
     }
 
     public function testGetNestedListSymbol()
@@ -1041,6 +1041,6 @@ class CategoryHierarchyTest extends UnitAbstract
             6 => str_repeat($seperator, 1) . $symbol . 'B3',
         ];
 
-        $this->assertArraysAreEqual($expected, $nestedList);
+        $this->assertArraysMatch($expected, $nestedList);
     }
 }

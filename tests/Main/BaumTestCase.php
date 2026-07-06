@@ -33,7 +33,7 @@ class BaumTestCase extends TestCase
 //         $app['config']->set('database.connections.default', $config);
 //     }
 
-    public function assertArraysAreEqual($expected, $actual, $message = '')
+    public function assertArraysMatch($expected, $actual, $message = '')
     {
         $ex = json_encode($expected, JSON_PRETTY_PRINT);
         $ac = json_encode($actual, JSON_PRETTY_PRINT);
@@ -54,7 +54,7 @@ class BaumTestCase extends TestCase
         $a = Arr::only($a, ['id', 'lft', 'rgt', 'name', 'parent_id']);
         $b = Arr::only($b, ['id', 'lft', 'rgt', 'name', 'parent_id']);
 
-        return $this->assertArraysAreEqual($a, $b);
+        return $this->assertArraysMatch($a, $b);
     }
 
     protected function categories($name, $className = 'Category')
